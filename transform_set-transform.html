@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>変換行列</title>
+</head>
+<body>
+    <canvas id="canvas" width="600" height="300"></canvas>
+    <script>
+        const canvas = document.getElementById("canvas");
+        
+        if (canvas.getContext) {
+            const ctx = canvas.getContext("2d");
+            // canvas要素の領域
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            // 白色の枠線
+            ctx.strokeStyle = "rgb(255, 255, 255)";
+            ctx.lineWidth = 5;
+            ctx.strokeRect(25, 25, 550, 250);
+
+            // 紫色(半透明)の矩形を描画
+            // setTransform(伸縮X, 傾斜Y, 傾斜X, 伸縮Y, 移動X, 移動Y)
+            ctx.setTransform(1, 0, -1, 1, 262.5, 37.5);
+            ctx.fillStyle = "rgba(255, 0, 255, 0.5)";
+            ctx.fillRect(0, 0, 300, 225);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>回転</title>
+</head>
+<body>
+    <canvas id="canvas" width="600" height="300"></canvas>
+    <script>
+        const canvas = document.getElementById("canvas");
+        
+        if (canvas.getContext) {
+            const ctx = canvas.getContext("2d");
+            // canvas要素の領域
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // canvas領域内のX軸、Y軸ともに0の位置を始点にして回転する水色の矩形を描画
+            ctx.save();
+            ctx.fillStyle = "rgb(0, 255, 255)";
+            ctx.fillRect(80, 80, 150, 150);
+            ctx.rotate((Math.PI / 180) * 15); // 15%右回転させる <= (3.14 / 180) * 15
+            // 灰色の矩形
+            ctx.fillStyle = "rgb(100, 100, 100)";
+            ctx.fillRect(80, 80, 150, 150);
+            ctx.restore();
+
+            // 矩形の中心で回転する緑色の矩形を描画
+            ctx.save();
+            ctx.fillStyle = "rgb(0, 255, 0)";
+            ctx.fillRect(325, 80, 150, 150);
+            ctx.translate(400, 155); // 矩形の中心に移動する
+            // x = x + 0.5 * 矩形の幅 <= 400 = 325 + (0.5 * 150)
+            // y = y + 0.5 * 矩形の高さ <= 155 = 80 + (0.5 * 150)
+            ctx.rotate((Math.PI / 180) * 15); // 15%右回転させる <= (3.14 / 180) * 15
+            ctx.translate(-400, -155); // 元の位置に移動する
+            // 灰色の矩形
+            ctx.fillStyle = "rgb(100, 100, 100)";
+            ctx.fillRect(325, 80, 150, 150);
+        }
+    </script>
+</body>
+</html>

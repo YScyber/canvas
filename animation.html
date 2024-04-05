@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>アニメーション</title>
+</head>
+<body>
+    <canvas id="canvas" width="600" height="300"></canvas>
+    <script>
+        const canvas = document.getElementById("canvas");
+
+        if (canvas.getContext) {
+            const ctx = canvas.getContext("2d");
+
+            // ===== ボールのクラス ここから =====
+            class Ball {
+                // ボールの設定
+                constructor(x, y, velX, velY, size, color) {
+                    this.x = x; // 開始位置のX軸
+                    this.y = y; // 開始位置のY軸
+                    this.velX = velX; // X軸のベクトル
+                    this.velY = velY; // Y軸のベクトル
+                    this.size = size; // 大きさ
+                    this.color = color; // 色
+                }
+                // ボールを描画
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fillStyle = this.color;
+                    ctx.fill();
+                }
+                // 境界(canvas領域外にボールが出ないようにする)の設定
+                update() {
+                    if (this.x + this.velX > canvas.width || this.x + this.velX < 0) {
+                        this.velX = -this.velX;
+                    }
+                    if (this.y + this.velY > canvas.height || this.y + this.velY < 0) {
+                        this.velY = -this.velY;
+                    }
+                    this.x += this.velX; // ボールに動きをつける(X軸)
+                    this.y += this.velY; // ボールに動きをつける(Y軸)
+                }   
+            }
+            // ===== ボールのクラス ここまで =====
+
+            // new Ball(開始位置のX軸, 開始位置のY軸, X軸のベクトル, Y軸のベクトル, 大きさ, 色)
+            const blueBall = new Ball(25, 50, 5, 2, 30, "rgb(0, 0, 255)"); // 青色のボールを設定
+            const redBall = new Ball(100, 50, 2, 5, 30, "rgb(255, 0, 0)"); // 赤色のボールを設定
+
+            // アニメーションを実行させるための関数
+            function loop() {
+                // canvas要素の領域(背景色を半透明にすることによりボールの動きに後引き効果をつけられる)
+                ctx.fillStyle = "rgba(225, 225, 225, 0.25)";
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                // 青色のボールを描画し動きをつける
+                blueBall.draw();
+                blueBall.update();
+
+                // 赤色のボールを描画し動きをつける
+                redBall.draw();
+                redBall.update();
+
+                // loop()関数を呼び出して次の再描画の前にアニメーションを更新することを要求する
+                requestAnimationFrame(loop);
+            }
+            loop(); // アニメーションを実行(この行を記述しないと描画されない)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>パスを描画</title>
+</head>
+<body>
+    <canvas id="canvas" width="600" height="300"></canvas>
+    <script>
+        const canvas = document.getElementById("canvas");
+        
+        if (canvas.getContext) {
+            const ctx = canvas.getContext("2d");
+            // canvas要素の領域
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            // 白色の枠線
+            ctx.strokeStyle = "rgb(255, 255, 255)";
+            ctx.lineWidth = 5;
+            ctx.strokeRect(25, 25, 550, 250);
+
+            // 円を描く(緑色)
+            ctx.beginPath(); // 描画の始まり
+            // canvas領域内のX軸125px、Y軸150pxの位置を中心として半径75pxの円を描画
+            ctx.arc(125, 150, 75, 0, Math.PI * 2);
+            ctx.strokeStyle = "rgb(0, 255, 0)";
+            ctx.lineWidth = 5; // <= この行は白色の枠線ですでに指定してあるので省略してもよい
+            ctx.stroke();
+
+            // 三角形を線で描く(青色)
+            ctx.beginPath(); // 描画の始まり
+            ctx.moveTo(300, 75); // 最初の点の場所 <= canvas領域内のX軸300px、Y軸75pxの位置
+            ctx.lineTo(385, 225); // 2番目の点の場所 <= canvas領域内のX軸385px、Y軸225pxの位置
+            ctx.lineTo(215, 225);  // 3番目の点の場所 <= canvas領域内のX軸215px、Y軸225pxの位置
+            ctx.closePath(); // 点を線で結ぶ
+            ctx.strokeStyle="rgb(0, 0, 255)";
+            ctx.stroke();
+
+            // 矩形を描く(紫色)
+            ctx.beginPath();
+            ctx.moveTo(400, 75); // 最初の点の場所 <= canvas領域内のX軸400px、Y軸75pxの位置
+            ctx.lineTo(400, 225); // 2番目の点の場所 <= canvas領域内のX軸400px、Y軸225pxの位置
+            ctx.lineTo(550, 225); // 3番目の点の場所 <= canvas領域内のX軸550px、Y軸225pxの位置
+            ctx.lineTo(550, 75); // 4番目の点の場所 <= canvas領域内のX軸550px、Y軸75pxの位置
+            ctx.closePath();
+            ctx.strokeStyle = "rgb(255, 0, 255)";
+            ctx.stroke();
+        }
+    </script>
+</body>
+</html>

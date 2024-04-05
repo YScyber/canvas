@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>グラデーション</title>
+</head>
+<body>
+    <canvas id="canvas" width="600" height="300"></canvas>
+    <script>
+        const canvas = document.getElementById("canvas");
+        
+        if (canvas.getContext) {
+            const ctx = canvas.getContext("2d");
+            // canvas要素の領域
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            // 白色の枠線
+            ctx.strokeStyle = "rgb(255, 255, 255)";
+            ctx.lineWidth = 5;
+            ctx.strokeRect(25, 25, 550, 250);
+
+            // 矩形を描く: fillStyle = createLinearGradient(X軸0, Y軸0, X軸1, Y軸1)
+            const linearGradient = ctx.createLinearGradient(60, 0, 210, 0);
+            linearGradient.addColorStop(0, "rgb(0, 125, 0)"); // 緑色 0%
+            linearGradient.addColorStop(0.25, "rgb(0, 255, 255)"); // 水色 25%
+            linearGradient.addColorStop(0.5, "rgb(0, 125, 0)"); // 緑色 50%
+            linearGradient.addColorStop(0.75, "rgb(0, 255, 255)"); // 水色 75%
+            linearGradient.addColorStop(1, "rgb(0, 125, 0)"); // 緑色 100%
+            ctx.fillStyle = linearGradient;
+            ctx.fillRect(60, 75, 150, 150);
+            
+            // 矩形を描く: fillStyle = createRadialGradient(X軸0, Y軸0, 半径0, X軸1, Y軸1, 半径1)
+            const radialGradient = ctx.createRadialGradient(300, 150, 10, 300, 150, 80);
+            radialGradient.addColorStop(0, "rgb(0, 125, 0)"); // 緑色 0%
+            radialGradient.addColorStop(0.25, "rgb(0, 255, 255)"); // 水色 25%
+            radialGradient.addColorStop(0.5, "rgb(0, 125, 0)"); // 緑色 50%
+            radialGradient.addColorStop(0.75, "rgb(0, 255, 255)"); // 水色 75%
+            radialGradient.addColorStop(1, "rgb(0, 125, 0)"); // 緑色 100%
+            ctx.fillStyle = radialGradient;
+            ctx.fillRect(225, 75, 150, 150);
+
+            // 矩形を描く: fillStyle = createConicGradient(開始角度, X軸, Y軸)
+            const conicGradient = ctx.createConicGradient(0, 462.5, 150);
+            conicGradient.addColorStop(0, "rgb(0, 125, 0)"); // 緑色 0%
+            conicGradient.addColorStop(0.25, "rgb(0, 255, 255)"); // 水色 25%
+            conicGradient.addColorStop(0.5, "rgb(0, 125, 0)"); // 緑色 50%
+            conicGradient.addColorStop(0.75, "rgb(0, 255, 255)"); // 水色 75%
+            conicGradient.addColorStop(1, "rgb(0, 125, 0)"); // 緑色 100%
+            ctx.fillStyle = conicGradient;
+            ctx.fillRect(390, 75, 150, 150);
+        }
+    </script>
+</body>
+</html>
