@@ -11,14 +11,14 @@
 
         if (canvas.getContext) {
             const ctx = canvas.getContext("2d");
-            // canvas要素の領域
+            // <canvas>要素の領域
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             // 白色の枠線
             ctx.strokeStyle = "rgb(255, 255, 255)";
             ctx.lineWidth = 5;
             ctx.strokeRect(25, 25, 550, 250);
 
-            // 輪郭線を描いたテキスト(白色)
+            // 輪郭線を描いたテキスト（白色）
             ctx.strokeStyle = "rgb(255, 255, 255)";
             ctx.lineWidth = 1; // 線の幅を1に指定しなおす
             // フォントスタイルは64pxの大きさでserif体
@@ -26,7 +26,7 @@
             // canvas領域内のX軸35px、Y軸90pxの位置からテキストを描画
             ctx.strokeText("Canvas text", 35, 90);
 
-            // 塗りつぶしたテキスト(黄色)
+            // 塗りつぶしたテキスト（黄色）
             ctx.fillStyle = "rgb(255, 255, 0)";
             // フォントスタイルは64pxの大きさでfantasy体
             ctx.font = "64px fantasy";
