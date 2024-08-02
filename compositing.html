@@ -16,7 +16,7 @@
             ctx.lineWidth = 40;
             ctx.strokeRect(0, 0, canvas.width, canvas.height);
 
-            // forループで10個の青色(半透明)の矩形を描画
+            // forループで10個の青色（半透明）の矩形を描画
             // canvas領域内のX軸35px、Y軸50pxの位置から90pxの矩形をX軸、Y軸ともに110pxずつ移動して描画
             for (let i = 0; i < 2; i++) {
                 for (let j = 0; j < 5; j++) {
@@ -28,39 +28,39 @@
                 }
             }
 
-            // 赤色(半透明)の円弧を描画
-            // これは既定の設定で、既存のコンテンツ(青色の矩形)の上に新しい図形(赤色の円弧)を描画する
+            // 赤色（半透明）の円弧を描画
+            // これは既定の設定で、既存のコンテンツ（青色の矩形）の上に新しい図形（赤色の円弧）を描画する
             ctx.globalCompositeOperation = "source-over";
             ctx.beginPath();
             ctx.fillStyle = "rgba(255, 0, 0, 0.8)";
             ctx.arc(135, 95, 40, 0, Math.PI * 2);
             ctx.fill();
 
-            // 赤色(半透明)の円弧を描画
-            // 両方の図形(青色の矩形、赤色の円弧)が重なる部分は、色値を加算して色を決定する
+            // 赤色（半透明）の円弧を描画
+            // 両方の図形（青色の矩形、赤色の円弧）が重なる部分は、色値を加算して色を決定する
             ctx.globalCompositeOperation = "exclusion";
             ctx.beginPath();
             ctx.fillStyle = "rgba(255, 0, 0, 0.8)";
             ctx.arc(245, 95, 40, 0, Math.PI * 2);
             ctx.fill();
 
-            // 赤色(半透明)の円弧を描画
-            // 両方のレイヤー(青色、赤色)の暗い方のピクセルを保持する
+            // 赤色（半透明）の円弧を描画
+            // 両方のレイヤー（青色、赤色）の暗い方のピクセルを保持する
             ctx.globalCompositeOperation = "darken";
             ctx.beginPath();
             ctx.fillStyle = "rgba(255, 0, 0, 0.8)";
             ctx.arc(354.5, 95, 40, 0, Math.PI * 2);
             ctx.fill();
 
-            // 赤色(半透明)の円弧を描画
-            // 下位レイヤー(青色)を上位レイヤー(赤色)の反転(青色)で除算する
+            // 赤色（半透明）の円弧を描画
+            // 下位レイヤー（青色）を上位レイヤー（赤色）の反転（青色）で除算する
             ctx.globalCompositeOperation = "color-dodge";
             ctx.beginPath();
             ctx.fillStyle = "rgba(255, 0, 0, 0.8)";
             ctx.arc(465.5, 95, 40, 0, Math.PI * 2);
             ctx.fill();
 
-            // 赤色(半透明)の円弧を描画
+            // 赤色（半透明）の円弧を描画
             // 図形は、両方が重なる部分は透明で、それ以外の部分は描画される
             ctx.globalCompositeOperation = "xor";
             ctx.beginPath();
@@ -68,24 +68,24 @@
             ctx.arc(135, 205, 40, 0, Math.PI * 2);
             ctx.fill();
 
-            // 赤色(半透明)の円弧を描画
-            // 上位レイヤー(赤色)の色相を採用しつつ、下位レイヤー(青色)の輝度と彩度を保持する
+            // 赤色（半透明）の円弧を描画
+            // 上位レイヤー（赤色）の色相を採用しつつ、下位レイヤー（青色）の輝度と彩度を保持する
             ctx.globalCompositeOperation = "hue";
             ctx.beginPath();
             ctx.fillStyle = "rgba(255, 0, 0, 0.8)";
             ctx.arc(245, 205, 40, 0, Math.PI * 2);
             ctx.fill();
 
-            // 赤色(半透明)の円弧を描画
-            // 上位レイヤー(赤色)から下位レイヤー(青色)を減算し、常に正の値を取得する
+            // 赤色（半透明）の円弧を描画
+            // 上位レイヤー（赤色）から下位レイヤー（青色）を減算し、常に正の値を取得する
             ctx.globalCompositeOperation = "difference";
             ctx.beginPath();
             ctx.fillStyle = "rgba(255, 0, 0, 0.8)";
             ctx.arc(354.5, 205, 40, 0, Math.PI * 2);
             ctx.fill();
 
-            // 赤色(半透明)の円弧を描画
-            // 既存のコンテンツ(青色の矩形)と、新しい図形(赤色の円弧)が重ならない部分が描画される
+            // 赤色（半透明）の円弧を描画
+            // 既存のコンテンツ（青色の矩形）と、新しい図形（赤色の円弧）が重ならない部分が描画される
             ctx.globalCompositeOperation = "destination-out";
             ctx.beginPath(); 
             ctx.fillStyle = "rgba(255, 0, 0, 0.8)";
