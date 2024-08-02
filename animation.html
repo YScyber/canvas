@@ -30,7 +30,7 @@
                     ctx.fillStyle = this.color;
                     ctx.fill();
                 }
-                // 境界(canvas領域外にボールが出ないようにする)の設定
+                // 境界（canvas領域外にボールが出ないようにする）の設定
                 update() {
                     if (this.x + this.velX > canvas.width || this.x + this.velX < 0) {
                         this.velX = -this.velX;
@@ -38,8 +38,8 @@
                     if (this.y + this.velY > canvas.height || this.y + this.velY < 0) {
                         this.velY = -this.velY;
                     }
-                    this.x += this.velX; // ボールに動きをつける(X軸)
-                    this.y += this.velY; // ボールに動きをつける(Y軸)
+                    this.x += this.velX; // ボールに動きをつける（X軸）
+                    this.y += this.velY; // ボールに動きをつける（Y軸）
                 }   
             }
             // ===== ボールのクラス ここまで =====
@@ -50,7 +50,7 @@
 
             // アニメーションを実行させるための関数
             function loop() {
-                // canvas要素の領域(背景色を半透明にすることによりボールの動きに後引き効果をつけられる)
+                // canvas要素の領域（背景色を半透明にすることによりボールの動きに後引き効果をつけられる）
                 ctx.fillStyle = "rgba(225, 225, 225, 0.25)";
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -65,7 +65,7 @@
                 // loop()関数を呼び出して次の再描画の前にアニメーションを更新することを要求する
                 requestAnimationFrame(loop);
             }
-            loop(); // アニメーションを実行(この行を記述しないと描画されない)
+            loop(); // アニメーションを実行（この行を記述しないと描画されない）
         }
     </script>
 </body>
