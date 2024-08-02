@@ -7,15 +7,15 @@
 <body>
     <canvas id="canvas" width="600" height="300"></canvas>
     <script>
-        // canvas要素を取得
+        // <canvas>要素を取得
         const canvas = document.getElementById("canvas");
         
-        if (canvas.getContext) { // ブラウザがcanvas要素に対応している場合、以下の記述を描画する
+        if (canvas.getContext) { // ブラウザが<canvas>要素に対応している場合、以下の記述を描画する
             
-            // canvas要素を2D(縦と横の平面の世界)で描画
+            // canvas要素を2D（縦と横の平面の世界）で描画
             const ctx = canvas.getContext("2d");
 
-            // canvas要素の領域(背景色は黒色)
+            // canvas要素の領域（背景色は黒色）
             ctx.fillStyle = "rgb(0, 0, 0)"; // <= この行を省略しても背景色は黒色になる
             // canvas領域内のX軸、Y軸ともに0pxからX方向に600px、Y方向に300pxの大きさの矩形を描画
             ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -27,27 +27,27 @@
             // canvas領域内のX軸、Y軸ともに25pxの位置からX方向に550px、Y方向に250pxの大きさの枠線を描画
             ctx.strokeRect(25, 25, 550, 250);
 
-            // 赤色(塗りつぶし)の矩形
+            // 赤色（塗りつぶし）の矩形
             ctx.fillStyle = "rgb(255, 0, 0)";
             // canvas領域内のX軸、Y軸ともに35pxの位置からX方向、Y方向ともに100pxの大きさの矩形を描画
             ctx.fillRect(35, 35, 100, 100);
 
-            // 緑色(塗りつぶし)の矩形
+            // 緑色（塗りつぶし）の矩形
             ctx.fillStyle = "rgb(0, 255, 0)";
             // canvas領域内のX軸142.5px、Y軸80pxの位置からX方向、Y方向ともに100pxの大きさの矩形を描画
             ctx.fillRect(142.5, 80, 100, 100);
 
-            // 青色(塗りつぶし)の矩形
+            // 青色（塗りつぶし）の矩形
             ctx.fillStyle = "rgb(0, 0, 255)";
             // canvas領域内のX軸249.5px、Y軸127.5pxの位置からX方向、Y方向ともに100pxの大きさの矩形を描画
             ctx.fillRect(249.5, 127.5, 100, 100);
 
-            // 黄色(塗りつぶし)の矩形
+            // 黄色（塗りつぶし）の矩形
             ctx.fillStyle = "rgb(255, 255, 0)";
             // canvas領域内のX軸357.5px、Y軸80pxの位置からX方向、Y方向ともに100pxの大きさの矩形を描画
             ctx.fillRect(357.5, 80, 100, 100);
 
-            // 紫色(塗りつぶし)の矩形
+            // 紫色（塗りつぶし）の矩形
             ctx.fillStyle = "rgb(255, 0, 255)";
             // canvas領域内のX軸465px、Y軸35pxの位置からX方向、Y方向ともに100pxの大きさの矩形を描画
             ctx.fillRect(465, 35, 100, 100);
