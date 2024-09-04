@@ -7,12 +7,27 @@ body {
     margin: 0 auto;
     padding: 0;
     width: 90%;
-    max-width: 980px;
+    max-width: 700px;
     background-color: #f8f8f8;
 }
 
-nav ol li {
-    line-height: 2.5;
+header h2 {
+    text-align: center;
+}
+
+nav ol {
+    display: flex;
+    flex-direction: column;
+}
+
+nav ol li a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+nav ol li a:focus,
+nav ol li a:hover {
+    border-bottom: 2px solid;
 }
 
 nav ul {
@@ -20,11 +35,8 @@ nav ul {
     list-style-type: none;
 }
 
-nav ul li a {
-    text-decoration: none;
-}
-
-nav ul li a:focus,
-nav ul li a:hover {
-    border-bottom: 2px solid;
+nav ul li iframe {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
 }
