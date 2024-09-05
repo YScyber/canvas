@@ -5,7 +5,7 @@
     <title>座標変換（拡大縮小）</title>
 </head>
 <body>
-    <canvas id="canvas" width="600" height="300"></canvas>
+    <canvas id="canvas" width="300" height="150"></canvas>
     <script>
         const canvas = document.getElementById("canvas");
         
@@ -16,29 +16,29 @@
             // 白色の枠線
             ctx.strokeStyle = "rgb(255, 255, 255)";
             ctx.lineWidth = 5;
-            ctx.strokeRect(25, 25, 550, 250);
+            ctx.strokeRect(10, 10, 280, 130);
 
             // シンプルな青色（半透明）の矩形を拡大させて描画
             ctx.save();
             ctx.scale(20, 1); // X軸は20倍、Y軸は1倍のスケールで描画
             ctx.fillStyle = "rgba(0, 0, 255, 0.5)";
-            ctx.fillRect(5, 135, 20, 20); // <= fillRect(100, 135, 400, 20) と同じ意味
+            ctx.fillRect(1, 20, 10, 20); // <= fillRect(20, 20, 200, 20) と同じ意味
             ctx.restore();
 
-            // テキストをX方向に反転させて描画（左のテキスト）
+            // テキストをX方向に反転させて描画（上のテキスト）
             ctx.save();
             ctx.scale(-2, 2); // X軸に負数の値を使用すれば反転する
             ctx.font = "32px serif";
             ctx.fillStyle = "rgb(255, 255, 255)";
-            ctx.fillText("Canvas", -150, 60);
+            ctx.fillText("Canvas", -60, 40);
             ctx.restore();
 
-            // テキストをY方向に反転させて描画（右のテキスト）
+            // テキストをY方向に反転させて描画（下のテキスト）
             ctx.save();
             ctx.scale(2, -2); // Y軸に負数の値を使用すれば反転する
             ctx.font = "32px serif";
             ctx.fillStyle = "rgb(255, 255, 255)";
-            ctx.fillText("Canvas", 150, -85);
+            ctx.fillText("Canvas", 10, -50);
         }
     </script>
 </body>
