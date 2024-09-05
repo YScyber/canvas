@@ -5,7 +5,7 @@
     <title>座標変換（変換行列）</title>
 </head>
 <body>
-    <canvas id="canvas" width="600" height="300"></canvas>
+    <canvas id="canvas" width="300" height="150"></canvas>
     <script>
         const canvas = document.getElementById("canvas");
         
@@ -16,13 +16,13 @@
             // 白色の枠線
             ctx.strokeStyle = "rgb(255, 255, 255)";
             ctx.lineWidth = 5;
-            ctx.strokeRect(25, 25, 550, 250);
+            ctx.strokeRect(10, 10, 280, 130);
 
             // 紫色（半透明）の矩形を描画
             // setTransform(伸縮X, 傾斜Y, 傾斜X, 伸縮Y, 移動X, 移動Y)
-            ctx.setTransform(1, 0, -1, 1, 262.5, 37.5);
+            ctx.setTransform(1, 0, -1, 1, 130, 20);
             ctx.fillStyle = "rgba(255, 0, 255, 0.5)";
-            ctx.fillRect(0, 0, 300, 225);
+            ctx.fillRect(0, 0, 150, 110);
         }
     </script>
 </body>
