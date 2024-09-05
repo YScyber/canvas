@@ -28,7 +28,7 @@
             // テキストをX方向に反転させて描画（上のテキスト）
             ctx.save();
             ctx.scale(-2, 2); // X軸に負数の値を使用すれば反転する
-            ctx.font = "32px serif";
+            ctx.font = "16px serif";
             ctx.fillStyle = "rgb(255, 255, 255)";
             ctx.fillText("Canvas", -60, 40);
             ctx.restore();
@@ -36,7 +36,7 @@
             // テキストをY方向に反転させて描画（下のテキスト）
             ctx.save();
             ctx.scale(2, -2); // Y軸に負数の値を使用すれば反転する
-            ctx.font = "32px serif";
+            ctx.font = "16px serif";
             ctx.fillStyle = "rgb(255, 255, 255)";
             ctx.fillText("Canvas", 10, -50);
         }
