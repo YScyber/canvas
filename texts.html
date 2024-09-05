@@ -5,7 +5,7 @@
     <title>テキストを描画</title>
 </head>
 <body>
-    <canvas id="canvas" width="600" height="300"></canvas>
+    <canvas id="canvas" width="300" height="150"></canvas>
     <script>
         const canvas = document.getElementById("canvas");
 
@@ -16,22 +16,22 @@
             // 白色の枠線
             ctx.strokeStyle = "rgb(255, 255, 255)";
             ctx.lineWidth = 5;
-            ctx.strokeRect(25, 25, 550, 250);
+            ctx.strokeRect(10, 10, 280, 130);
 
             // 輪郭線を描いたテキスト（白色）
             ctx.strokeStyle = "rgb(255, 255, 255)";
             ctx.lineWidth = 1; // 線の幅を1に指定しなおす
-            // フォントスタイルは64pxの大きさでserif体
-            ctx.font = "64px serif";
-            // canvas領域内のX軸35px、Y軸90pxの位置からテキストを描画
-            ctx.strokeText("Canvas text", 35, 90);
+            // フォントスタイルは32pxの大きさでserif体
+            ctx.font = "32px serif";
+            // canvas領域内のX軸20px、Y軸50pxの位置からテキストを描画
+            ctx.strokeText("Canvas text", 20, 50);
 
             // 塗りつぶしたテキスト（黄色）
             ctx.fillStyle = "rgb(255, 255, 0)";
-            // フォントスタイルは64pxの大きさでfantasy体
-            ctx.font = "64px fantasy";
-            // canvas領域内のX軸35px、Y軸160pxの位置からテキストを描画
-            ctx.fillText("Canvas text", 35, 160);
+            // フォントスタイルは32pxの大きさでfantasy体
+            ctx.font = "32px fantasy";
+            // canvas領域内のX軸20px、Y軸90pxの位置からテキストを描画
+            ctx.fillText("Canvas text", 20, 90);
         }
     </script>
 </body>
