@@ -5,7 +5,7 @@
     <title>アニメーション</title>
 </head>
 <body>
-    <canvas id="canvas" width="600" height="300"></canvas>
+    <canvas id="canvas" width="300" height="150"></canvas>
     <script>
         const canvas = document.getElementById("canvas");
 
@@ -45,13 +45,13 @@
             // ===== ボールのクラス ここまで =====
 
             // new Ball(開始位置のX軸, 開始位置のY軸, X軸のベクトル, Y軸のベクトル, 大きさ, 色)
-            const blueBall = new Ball(25, 50, 5, 2, 30, "rgb(0, 0, 255)"); // 青色のボールを設定
-            const redBall = new Ball(100, 50, 2, 5, 30, "rgb(255, 0, 0)"); // 赤色のボールを設定
+            const blueBall = new Ball(25, 50, 5, 2, 10, "rgb(0, 0, 255)"); // 青色のボールを設定
+            const redBall = new Ball(100, 50, 2, 5, 10, "rgb(255, 0, 0)"); // 赤色のボールを設定
 
             // アニメーションを実行させるための関数
             function loop() {
                 // canvas要素の領域（背景色を半透明にすることによりボールの動きに後引き効果をつけられる）
-                ctx.fillStyle = "rgba(225, 225, 225, 0.25)";
+                ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
 
                 // 青色のボールを描画し動きをつける
