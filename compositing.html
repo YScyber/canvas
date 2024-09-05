@@ -5,7 +5,7 @@
     <title>合成</title>
 </head>
 <body>
-    <canvas id="canvas" width="600" height="300"></canvas>
+    <canvas id="canvas" width="300" height="150"></canvas>
     <script>
         const canvas = document.getElementById("canvas");
 
@@ -17,13 +17,13 @@
             ctx.strokeRect(0, 0, canvas.width, canvas.height);
 
             // forループで10個の青色（半透明）の矩形を描画
-            // canvas領域内のX軸35px、Y軸50pxの位置から90pxの矩形をX軸、Y軸ともに110pxずつ移動して描画
+            // canvas領域内のX軸、Y軸ともに27.5pxの位置から45pxの矩形をX軸、Y軸ともに50pxずつ移動しながら描画
             for (let i = 0; i < 2; i++) {
                 for (let j = 0; j < 5; j++) {
                     ctx.save();
-                    ctx.translate(35 + j * 110, 50 + i * 110);
+                    ctx.translate(27.5 + j * 50, 27.5 + i * 50);
                     ctx.fillStyle = "rgba(0, 0, 255, 0.8)";
-                    ctx.fillRect(0, 0, 90, 90);
+                    ctx.fillRect(0, 0, 45, 45);
                     ctx.restore();
                 }
             }
@@ -33,7 +33,7 @@
             ctx.globalCompositeOperation = "source-over";
             ctx.beginPath();
             ctx.fillStyle = "rgba(255, 0, 0, 0.8)";
-            ctx.arc(135, 95, 40, 0, Math.PI * 2);
+            ctx.arc(75, 50, 20, 0, Math.PI * 2);
             ctx.fill();
 
             // 赤色（半透明）の円弧を描画
@@ -41,7 +41,7 @@
             ctx.globalCompositeOperation = "exclusion";
             ctx.beginPath();
             ctx.fillStyle = "rgba(255, 0, 0, 0.8)";
-            ctx.arc(245, 95, 40, 0, Math.PI * 2);
+            ctx.arc(125, 50, 20, 0, Math.PI * 2);
             ctx.fill();
 
             // 赤色（半透明）の円弧を描画
@@ -49,7 +49,7 @@
             ctx.globalCompositeOperation = "darken";
             ctx.beginPath();
             ctx.fillStyle = "rgba(255, 0, 0, 0.8)";
-            ctx.arc(354.5, 95, 40, 0, Math.PI * 2);
+            ctx.arc(175, 50, 20, 0, Math.PI * 2);
             ctx.fill();
 
             // 赤色（半透明）の円弧を描画
@@ -57,7 +57,7 @@
             ctx.globalCompositeOperation = "color-dodge";
             ctx.beginPath();
             ctx.fillStyle = "rgba(255, 0, 0, 0.8)";
-            ctx.arc(465.5, 95, 40, 0, Math.PI * 2);
+            ctx.arc(225, 50, 20, 0, Math.PI * 2);
             ctx.fill();
 
             // 赤色（半透明）の円弧を描画
@@ -65,7 +65,7 @@
             ctx.globalCompositeOperation = "xor";
             ctx.beginPath();
             ctx.fillStyle = "rgba(255, 0, 0, 0.8)";
-            ctx.arc(135, 205, 40, 0, Math.PI * 2);
+            ctx.arc(75, 100, 20, 0, Math.PI * 2);
             ctx.fill();
 
             // 赤色（半透明）の円弧を描画
@@ -73,7 +73,7 @@
             ctx.globalCompositeOperation = "hue";
             ctx.beginPath();
             ctx.fillStyle = "rgba(255, 0, 0, 0.8)";
-            ctx.arc(245, 205, 40, 0, Math.PI * 2);
+            ctx.arc(125, 100, 20, 0, Math.PI * 2);
             ctx.fill();
 
             // 赤色（半透明）の円弧を描画
@@ -81,7 +81,7 @@
             ctx.globalCompositeOperation = "difference";
             ctx.beginPath();
             ctx.fillStyle = "rgba(255, 0, 0, 0.8)";
-            ctx.arc(354.5, 205, 40, 0, Math.PI * 2);
+            ctx.arc(175, 100, 20, 0, Math.PI * 2);
             ctx.fill();
 
             // 赤色（半透明）の円弧を描画
@@ -89,7 +89,7 @@
             ctx.globalCompositeOperation = "destination-out";
             ctx.beginPath(); 
             ctx.fillStyle = "rgba(255, 0, 0, 0.8)";
-            ctx.arc(465.5, 205, 40, 0, Math.PI * 2);
+            ctx.arc(225, 100, 20, 0, Math.PI * 2);
             ctx.fill();
         }
     </script>
