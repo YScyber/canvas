@@ -5,7 +5,7 @@
     <title>座標変換（移動）</title>
 </head>
 <body>
-    <canvas id="canvas" width="600" height="300"></canvas>
+    <canvas id="canvas" width="300" height="150"></canvas>
     <script>
         const canvas = document.getElementById("canvas");
         
@@ -16,38 +16,38 @@
             // 白色の枠線
             ctx.strokeStyle = "rgb(255, 255, 255)";
             ctx.lineWidth = 5;
-            ctx.strokeRect(25, 25, 550, 250);
+            ctx.strokeRect(10, 10, 280, 130);
 
             // 青色（半透明）の矩形
-            // レストアした矩形を分かりやすくするためにアルファ値（透明度）を0.3に指定
-            ctx.fillStyle = "rgba(0, 0, 255, 0.3)";
-            ctx.fillRect(57.5, 57.5, 80, 80);
+            // レストアした矩形を分かりやすくするためにアルファ値（透明度）を0.7に指定
+            ctx.fillStyle = "rgba(0, 0, 255, 0.7)";
+            ctx.fillRect(30, 30, 40, 40);
             ctx.save(); // 青色（半透明）の矩形をセーブ
 
             // 緑色（半透明）の矩形
-            // レストアした矩形を分かりやすくするためにアルファ値（透明度）を0.3に指定
-            ctx.fillStyle = "rgba(0, 255, 0, 0.3)";
-            ctx.fillRect(57.5, 157.5, 80, 80);
+            // レストアした矩形を分かりやすくするためにアルファ値（透明度）を0.7に指定
+            ctx.fillStyle = "rgba(0, 255, 0, 0.7)";
+            ctx.fillRect(30, 80, 40, 40);
             ctx.save(); // 緑色（半透明）の矩形をセーブ
 
             // 緑色（半透明）の矩形をレストア（最後にセーブした緑色（半透明）の矩形からレストアする）
             ctx.restore();
-            ctx.fillStyle = "rgba(0, 255, 0, 0.7)"; // アルファ値（透明度）を0.7に変更
-            ctx.fillRect(257.5, 157.5, 80, 80);
+            ctx.fillStyle = "rgba(0, 255, 0, 0.3)"; // アルファ値（透明度）を0.3に変更
+            ctx.fillRect(130, 80, 40, 40);
 
             // 青色（半透明）の矩形をレストア
             ctx.restore();
-            ctx.fillStyle = "rgba(0, 0, 255, 0.7)"; // アルファ値（透明度）を0.7に変更
-            ctx.fillRect(357.5, 57.5, 80, 80);
+            ctx.fillStyle = "rgba(0, 0, 255, 0.3)"; // アルファ値（透明度）を0.3に変更
+            ctx.fillRect(180, 30, 40, 40);
 
             // forループで10個の白色（半透明）の矩形を描画
-            // canvas領域内のX軸、Y軸ともに60pxの位置から75pxの矩形をX軸、Y軸ともに100pxずつ移動して描画
-            for (let i = 0; i < 2; i++) { // 行数は2
-                for (let j = 0; j < 5; j++) { // 列数は5
+            // canvas領域内のX軸、Y軸ともに30pxの位置から40pxの矩形をX軸、Y軸ともに50pxずつ移動しながら描画
+            for (let i = 0; i < 2; i++) { // ２行
+                for (let j = 0; j < 5; j++) { // ５列
                     ctx.save();
-                    ctx.translate(60 + j * 100, 60 + i * 100);
+                    ctx.translate(30 + j * 50, 30 + i * 50);
                     ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
-                    ctx.fillRect(0, 0, 75, 75);
+                    ctx.fillRect(0, 0, 40, 40);
                     ctx.restore();
                 }
             }
