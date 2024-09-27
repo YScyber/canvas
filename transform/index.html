@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>transform</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="script.js" type="text/javascript" defer></script>
+</head>
+<body>
+    <canvas class="positioning preview"></canvas>
+    <textarea class="positioning playable playable-js" style="height: 160px;">
+if (canvas.getContext) {
+    // canvas要素の領域（背景色は黒色）
+    ctx.fillStyle = "rgb(0, 0, 0)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // 白色の枠線
+    ctx.strokeStyle = "rgb(255, 255, 255)";
+    ctx.lineWidth = 5;
+    ctx.strokeRect(10, 10, 280, 130);
+
+    // 青色（半透明）の矩形を拡大させて描画
+    ctx.save();
+    ctx.scale(20, 1);
+    ctx.fillStyle = "rgba(0, 0, 255, 0.5)";
+    ctx.fillRect(1, 20, 13, 110);
+    ctx.restore();
+
+    // forループで４個の紫色（半透明）の矩形を四隅に描画
+    for (let i = 0; i &lt; 2; i++) { // ２行
+        for (let j = 0; j &lt; 2; j++) { // ２列
+            ctx.save();
+            ctx.translate(20 + j * 220, 20 + i * 70);
+            ctx.fillStyle = "rgba(255, 0, 255, 0.3)";
+            ctx.fillRect(0, 0, 40, 40);
+            ctx.restore();
+        }
+    }
+
+    // 黄色（半透明）の矩形に左から右に傾斜をつけて描画
+    ctx.save();
+    ctx.setTransform(1, 0, 1, 1, 20, 20);
+    ctx.fillStyle = "rgba(255, 255, 0, 0.3)";
+    ctx.fillRect(0, 0, 150, 110);
+    ctx.restore();
+
+    // 黄色（半透明）の矩形に右から左に傾斜をつけて描画
+    ctx.save();
+    ctx.setTransform(1, 0, -1, 1, 130, 20);
+    ctx.fillStyle = "rgba(255, 255, 0, 0.3)";
+    ctx.fillRect(0, 0, 150, 110);
+    ctx.restore();
+
+    // 緑色（半透明）の矩形をcanvas領域内の真ん中に描画
+    ctx.save();
+    ctx.fillStyle = "rgba(0, 255, 0, 0.5)";
+    ctx.fillRect(125, 50, 50, 50);
+    ctx.translate(150, 75);
+    ctx.rotate((Math.PI / 180) * 45);
+    ctx.translate(-150, -75);
+    // 緑色（半透明）の矩形の中心で回転する水色（半透明）の矩形を描画
+    ctx.fillStyle = "rgba(0, 255, 255, 0.5)";
+    ctx.fillRect(125, 50, 50, 50);
+    ctx.restore();
+}
+</textarea>
+    <div class="positioning playable-buttons">
+        <input type="button" id="reset" value="リセット" />
+    </div>
+</body>
+</html>
