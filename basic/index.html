@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>basic</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="script.js" type="text/javascript" defer></script>
+</head>
+<body>
+    <canvas class="positioning preview"></canvas>
+    <textarea class="positioning playable playable-js" style="height: 160px;">
+if (canvas.getContext) {
+    // canvas要素の領域（背景色は黒色）
+    ctx.fillStyle = "rgb(0, 0, 0)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // 白色の枠線
+    ctx.strokeStyle = "rgb(255, 255, 255)";
+    ctx.lineWidth = 5;
+    ctx.strokeRect(10, 10, 280, 130);
+
+    // 緑色（線）の円弧
+    ctx.beginPath();
+    ctx.arc(70, 75, 35, 0, Math.PI * 2);
+    ctx.strokeStyle = "rgb(0, 255, 0)";
+    ctx.stroke();
+
+    // 青色（線）の三角形
+    ctx.beginPath();
+    ctx.moveTo(150, 45);
+    ctx.lineTo(180, 110);
+    ctx.lineTo(120, 110);
+    ctx.closePath();
+    ctx.strokeStyle="rgb(0, 0, 255)";
+    ctx.stroke();
+
+    // 紫色（線）の矩形
+    ctx.beginPath();
+    ctx.moveTo(200, 45);
+    ctx.lineTo(200, 110);
+    ctx.lineTo(260, 110);
+    ctx.lineTo(260, 45);
+    ctx.closePath();
+    ctx.strokeStyle = "rgb(255, 0, 255)";
+    ctx.stroke();
+
+    // 緑色（塗りつぶし）の円弧
+    ctx.beginPath();
+    ctx.arc(70, 75, 30, 0, Math.PI * 2);
+    ctx.fillStyle = "rgb(0, 255, 0)";
+    ctx.fill();
+
+    // 青色（塗りつぶし）の三角形
+    ctx.beginPath();
+    ctx.moveTo(150, 57.5);
+    ctx.lineTo(172.5, 105);
+    ctx.lineTo(127.5, 105);
+    ctx.closePath();
+    ctx.fillStyle="rgb(0, 0, 255)";
+    ctx.fill();
+
+    // 紫色（塗りつぶし）の矩形
+    ctx.beginPath();
+    ctx.moveTo(205, 50);
+    ctx.lineTo(205, 105);
+    ctx.lineTo(255, 105);
+    ctx.lineTo(255, 50);
+    ctx.closePath();
+    ctx.fillStyle = "rgb(255, 0, 255)";
+    ctx.fill();
+
+    // 輪郭線を描いたテキスト（白色）
+    ctx.strokeStyle = "rgb(255, 255, 255)";
+    ctx.lineWidth = 1;
+    ctx.font = "20px fantasy";
+    ctx.strokeText("stroke style", 110, 30);
+
+    // 白色（線）のライン
+    ctx.beginPath();
+    ctx.moveTo(110, 30);
+    ctx.lineTo(90, 45);
+    ctx.closePath();
+    ctx.strokeStyle="rgb(255, 255, 255)";
+    ctx.stroke();
+
+    // 白色（塗りつぶし）の円弧
+    ctx.beginPath();
+    ctx.arc(90, 45, 3, 0, Math.PI * 2);
+    ctx.fillStyle = "rgb(255, 255, 255)";
+    ctx.fill();
+
+    // 塗りつぶしたテキスト（白色）
+    ctx.fillStyle = "rgb(255, 255, 255)";
+    ctx.font = "20px fantasy";
+    ctx.fillText("fill style", 100, 130);
+
+    // 白色（線）のライン
+    ctx.beginPath();
+    ctx.moveTo(100, 115);
+    ctx.lineTo(80, 90);
+    ctx.closePath();
+    ctx.strokeStyle="rgb(255, 255, 255)";
+    ctx.stroke();
+
+    // 白色（塗りつぶし）の円弧
+    ctx.beginPath();
+    ctx.arc(80, 90, 3, 0, Math.PI * 2);
+    ctx.fillStyle = "rgb(255, 255, 255)";
+    ctx.fill();
+}
+</textarea>
+    <div class="positioning playable-buttons">
+        <input type="button" id="reset" value="リセット" />
+    </div>
+</body>
+</html>

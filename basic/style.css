@@ -1,0 +1,49 @@
+@charset "UTF-8";
+html {
+    font: 1em/1.5 sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.positioning {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 980px;
+}
+
+canvas.preview {
+    display: block;
+    padding: 10px;
+    border: 1px solid #4d5053;
+    border-radius: 2px;
+}
+
+textarea.playable {
+    display: block;
+    padding: 10px 10px 0px;
+    border: none;
+    border-left: 6px solid #55acbb;
+    background-color: #f4f6f8;
+    font-family: monospace;
+    font-weight: bold;
+    color: #4d5053;
+    font-size: 120%;
+}
+
+div.playable-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+div.playable-buttons input[type="button"] {
+    margin: 10px;
+    font-size: 100%;
+}
