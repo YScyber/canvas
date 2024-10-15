@@ -8,8 +8,10 @@ iframe要素の内容は上から順に以下の通りとなります。
 
 1. [scale.html](transform/scale.html "transform/scale.html")、[translate.html](transform/translate.html "transform/translate.html")、[set-transform.html](transform/set-transform.html "transform/set-transform.html")、[rotate.html](transform/rotate.html "transform/rotate.html")の組み合わせ
 
-1. [animation.html](advanced/animation.html "advanced/animation.html")、[gradation.html](advanced/gradation.html "advanced/gradation.html")の組み合わせ<br><br>
+1. [animation.html](advanced/animation.html "advanced/animation.html")、[gradation.html](advanced/gradation.html "advanced/gradation.html")の組み合わせ
+<br><br>
 
-※ 日本時間 2024/09/27 にリファクタリングしました。<br><br>
+※ 日本時間 2024/09/27 にリファクタリングしました。
+<br><br>
 
 [完成ページへ](https://yscyber.github.io/canvas/ "https://yscyber.github.io/canvas/")
