@@ -12,14 +12,12 @@ body {
     color: #f8f8f8;
 }
 
-header {
+section h1 {
     margin-bottom: 20px;
     padding: 1em;
     border-bottom: 10px double #f8f8f8;
-}
-
-header h1 {
     text-align: center;
+    font-size: 2em;
 }
 
 div.wrapper {
