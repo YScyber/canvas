@@ -234,8 +234,87 @@ if (canvas.getContext) {
 ```
 <br>
 
-1. [animation.html](advanced/animation.html "advanced/animation.html")、[gradation.html](advanced/gradation.html "advanced/gradation.html")の組み合わせ
-<br><br>
+### アニメーションとグラデーション
+
+[animation.html](advanced/animation.html "advanced/animation.html")、[gradation.html](advanced/gradation.html "advanced/gradation.html")の組み合わせ
+
+`class`構文でボールの設定、ボールの描画、境界（canvas領域）の設定をしています。
+
+```javascript
+if (canvas.getContext) {
+    // ===== ボールのクラス ここから =====
+    class Ball {
+        // ボールの設定
+        constructor(x, y, velX, velY, size, color) {
+            this.x = x; // 開始位置のX軸
+            this.y = y; // 開始位置のY軸
+            this.velX = velX; // X軸のベクトル
+            this.velY = velY; // Y軸のベクトル
+            this.size = size; // 大きさ
+            this.color = color; // 色
+        }
+        // ボールを描画
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+        }
+        // 境界（canvas領域外にボールが出ないようにする）の設定
+        update() {
+            if (this.x + this.velX > canvas.width || this.x + this.velX &lt; 0) { // textarea要素内で"<"（小なり）はエラーとなるため"&lt;"と記述しています
+                this.velX = -this.velX;
+            }
+            if (this.y + this.velY > canvas.height || this.y + this.velY &lt; 0) { // textarea要素内で"<"（小なり）はエラーとなるため"&lt;"と記述しています
+                this.velY = -this.velY;
+            }
+            this.x += this.velX;
+            this.y += this.velY;
+        }   
+    }
+    // ===== ボールのクラス ここまで =====
+}
+```
+
+ボールがアニメーションした際にグラデーションされるように**canvas領域の背景**に左辺から右辺にかけて設定しています。
+
+```javascript
+if (canvas.getContext) {
+    // グラデーションの設定
+    const linearGradient = ctx.createLinearGradient(25, 0, 275, 0); 
+    linearGradient.addColorStop(0, "rgba(255, 0, 255, 0.5)");   // 半透明の紫色
+    linearGradient.addColorStop(0.5, "rgba(255, 255, 0, 0.5)"); // 半透明の黄色
+    linearGradient.addColorStop(1, "rgba(0, 255, 255, 0.5)");   // 半透明の水色
+}
+```
+
+`new`を使用して新しいボールを作成しますが、色は先ほど作成したグラデーションを設定します。
+
+```javascript
+if (canvas.getContext) {
+    // new Ball(開始位置のX軸, 開始位置のY軸, X軸のベクトル, Y軸のベクトル, 大きさ, 色)
+    const ball = new Ball(0, 75, 3, 1, 10, linearGradient);
+}
+```
+
+Window.requestAnimationFrame()メソッドを使用してアニメーションを繰り返し描画させています。背景色は`rgba(0, 0, 0, 0.25)`（半透明の黒色）にすることにより、後引き効果を付けることができます。
+
+```javascript
+if (canvas.getContext) {
+    // アニメーションを実行させるための関数
+    function loop() {
+        ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ball.draw();
+        ball.update();
+
+        requestAnimationFrame(loop);
+    }
+    loop();
+}
+```
+<br>
 
 ※ 日本時間 2024/09/27 にリファクタリングしました。
 <br><br>
