@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>basic</title>
+    <title>基本</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" type="text/javascript" defer></script>
 </head>
@@ -26,6 +26,12 @@ if (canvas.getContext) {
     ctx.strokeStyle = "rgb(0, 255, 0)";
     ctx.stroke();
 
+    // 緑色（塗りつぶし）の円弧
+    ctx.beginPath();
+    ctx.arc(70, 75, 30, 0, Math.PI * 2);
+    ctx.fillStyle = "rgb(0, 255, 0)";
+    ctx.fill();
+
     // 青色（線）の三角形
     ctx.beginPath();
     ctx.moveTo(150, 45);
@@ -34,6 +40,15 @@ if (canvas.getContext) {
     ctx.closePath();
     ctx.strokeStyle="rgb(0, 0, 255)";
     ctx.stroke();
+
+    // 青色（塗りつぶし）の三角形
+    ctx.beginPath();
+    ctx.moveTo(150, 57.5);
+    ctx.lineTo(172.5, 105);
+    ctx.lineTo(127.5, 105);
+    ctx.closePath();
+    ctx.fillStyle="rgb(0, 0, 255)";
+    ctx.fill();
 
     // 紫色（線）の矩形
     ctx.beginPath();
@@ -44,21 +59,6 @@ if (canvas.getContext) {
     ctx.closePath();
     ctx.strokeStyle = "rgb(255, 0, 255)";
     ctx.stroke();
-
-    // 緑色（塗りつぶし）の円弧
-    ctx.beginPath();
-    ctx.arc(70, 75, 30, 0, Math.PI * 2);
-    ctx.fillStyle = "rgb(0, 255, 0)";
-    ctx.fill();
-
-    // 青色（塗りつぶし）の三角形
-    ctx.beginPath();
-    ctx.moveTo(150, 57.5);
-    ctx.lineTo(172.5, 105);
-    ctx.lineTo(127.5, 105);
-    ctx.closePath();
-    ctx.fillStyle="rgb(0, 0, 255)";
-    ctx.fill();
 
     // 紫色（塗りつぶし）の矩形
     ctx.beginPath();
