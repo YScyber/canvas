@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>advanced</title>
+    <title>アニメーションとグラデーション</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" type="text/javascript" defer></script>
 </head>
@@ -43,17 +43,18 @@ if (canvas.getContext) {
     }
     // ===== ボールのクラス ここまで =====
 
-    // new Ball(開始位置のX軸, 開始位置のY軸, X軸のベクトル, Y軸のベクトル, 大きさ, 色)
-    const ball = new Ball(0, 75, 1, 0, 10, "rgba(0, 255, 0, 0.25)");
-    
+    // グラデーションの設定
     const linearGradient = ctx.createLinearGradient(25, 0, 275, 0);
-    linearGradient.addColorStop(0, "rgba(255, 255, 0, 0.25)");
-    linearGradient.addColorStop(0.5, "rgba(255, 0, 255, 0.25)");
-    linearGradient.addColorStop(1, "rgba(0, 255, 255, 0.25)");
+    linearGradient.addColorStop(0, "rgba(255, 0, 255, 0.5)");
+    linearGradient.addColorStop(0.5, "rgba(255, 255, 0, 0.5)");
+    linearGradient.addColorStop(1, "rgba(0, 255, 255, 0.5)");
+
+    // new Ball(開始位置のX軸, 開始位置のY軸, X軸のベクトル, Y軸のベクトル, 大きさ, 色)
+    const ball = new Ball(0, 75, 3, 1, 10, linearGradient);
 
     // アニメーションを実行させるための関数
     function loop() {
-        ctx.fillStyle = linearGradient;
+        ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
         ball.draw();
