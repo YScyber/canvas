@@ -6,7 +6,6 @@ html {
 body {
     margin: 0;
     padding: 0;
-    color: #333;
 }
 
 * {
@@ -22,19 +21,18 @@ body {
 canvas.preview {
     display: block;
     padding: 10px;
-    border: 1px solid #4d5053;
-    border-radius: 2px;
+    border: 1px solid #333;
 }
 
 textarea.playable {
     display: block;
     padding: 10px 10px 0px;
+    min-height: 160px;
     border: none;
-    border-left: 6px solid #55acbb;
-    background-color: #f4f6f8;
+    border-left: 6px solid #5ab;
+    background-color: #f4f4f4;
     font-family: monospace;
     font-weight: bold;
-    color: #4d5053;
     font-size: 120%;
 }
 
@@ -45,5 +43,6 @@ div.playable-buttons {
 
 div.playable-buttons input[type="button"] {
     margin: 10px;
+    font-family: inherit;
     font-size: 100%;
 }
