@@ -35,7 +35,7 @@ if (canvas.getContext) {
 
 ### 基本
 
-[rectangles.html](basic/rectangles.html "basic/rectangles.html")、[paths.html](basic/paths.html "basic/paths.html")、[texts.html](basic/texts.html "basic/texts.html")の組み合わせ
+[rectangles.html](basic/resources/rectangles.html "basic/resources/rectangles.html")、[paths.html](basic/resources/paths.html "basic/resources/paths.html")、[texts.html](basic/resources/texts.html "basic/resources/texts.html")の組み合わせ
 
 **共通設定**に記述してある`rgb(255, 255, 255)`（白色）の枠線の中に以下のものを順番に描画しています。
 
@@ -161,7 +161,7 @@ if (canvas.getContext) {
 
 ### 座標変換
 
-[scale.html](transform/scale.html "transform/scale.html")、[translate.html](transform/translate.html "transform/translate.html")、[set-transform.html](transform/set-transform.html "transform/set-transform.html")、[rotate.html](transform/rotate.html "transform/rotate.html")の組み合わせ
+[scale.html](transform/resources/scale.html "transform/resources/scale.html")、[translate.html](transform/resources/translate.html "transform/resources/translate.html")、[set-transform.html](transform/resources/set-transform.html "transform/resources/set-transform.html")、[rotate.html](transform/resources/rotate.html "transform/resources/rotate.html")の組み合わせ
 
 **共通設定**に記述してある`rgb(255, 255, 255)`（白色）の枠線の中に以下のものを順番に重ねて描画しています。
 
@@ -236,7 +236,7 @@ if (canvas.getContext) {
 
 ### アニメーションとグラデーション
 
-[animation.html](advanced/animation.html "advanced/animation.html")、[gradation.html](advanced/gradation.html "advanced/gradation.html")の組み合わせ
+[animation.html](advanced/resources/animation.html "advanced/resources/animation.html")、[gradation.html](advanced/resources/gradation.html "advanced/resources/gradation.html")の組み合わせ
 
 `class`構文でボールの設定、ボールの描画、境界（canvas領域）の設定をしています。
 
