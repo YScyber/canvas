@@ -12,22 +12,21 @@ body {
     box-sizing: border-box;
 }
 
-.positioning {
+.align {
     margin: 20px auto;
     width: 90%;
     max-width: 980px;
 }
 
-canvas.preview {
+canvas {
     display: block;
     padding: 10px;
     border: 1px solid #333;
 }
 
-textarea.playable {
+textarea {
     display: block;
     padding: 10px 10px 0px;
-    min-height: 160px;
     border: none;
     border-left: 6px solid #5ab;
     background-color: #f4f4f4;
@@ -35,6 +34,8 @@ textarea.playable {
     font-weight: bold;
     font-size: 120%;
 }
+
+textarea.playable-js { min-height: 160px; }
 
 div.playable-buttons {
     display: flex;
@@ -45,4 +46,11 @@ div.playable-buttons input[type="button"] {
     margin: 10px;
     font-family: inherit;
     font-size: 100%;
+}
+
+/* アットルールでフォントサイズを変更 */
+@media screen and (max-width: 699px) {
+    textarea {
+        font-size: 100%;
+    }
 }
