@@ -7,6 +7,20 @@ iframe要素の内容は上から順に以下の通りとなります。
 
 ### 共通設定
 
+#### CSS
+
+アットルールを使用して画面の幅が`699px`以下の場合、textarea要素内に記述されているコードのフォントサイズを`120%`から`100%`へと変更しています。 
+
+```css
+@media screen and (max-width: 699px) {
+    textarea {
+        font-size: 100%;
+    }
+}
+```
+
+このCSSの共通設定は、各ディレクトリ内にある`style.css`ファイルに記述しています。
+
 #### JavaScript
 
 ブラウザーがcanvas要素に対応していたら、canvas要素内に記述された内容を描画するようにします。
@@ -316,7 +330,7 @@ if (canvas.getContext) {
 ```
 <br>
 
-※ 日本時間 2024/09/27 にリファクタリングしました。
+※ 日本時間 2024/12/06 に変更しました。
 <br><br>
 
 [完成ページへ](https://yscyber.github.io/canvas/ "https://yscyber.github.io/canvas/")
