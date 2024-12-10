@@ -9,15 +9,17 @@ body {
     width: 90%;
     max-width: 980px;
     background-color: #000;
-    color: #f8f8f8;
 }
 
-section h1 {
+header {
     margin-bottom: 20px;
     padding: 1em;
     border-bottom: 10px double #f8f8f8;
+}
+
+h1 {
     text-align: center;
-    font-size: 1.7em;
+    color: #f8f8f8;
 }
 
 div.wrapper {
@@ -26,13 +28,13 @@ div.wrapper {
     gap: 20px;
 }
 
-div.wrapper iframe {
+iframe {
     max-width: 100%;
     background-color: #f8f8f8;
 }
 
 @media screen and (max-width: 799px) {
-    div.wrapper iframe {
+    iframe {
         height: 550px;
     }
 }
