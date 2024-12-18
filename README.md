@@ -1,13 +1,24 @@
-## Canvas
+# Canvas
 
-このリポジトリではJavaScriptでDOM操作を行っています。textarea要素にはJavaScriptのコードがすでに入力されており、最上部にあるプレビュー画面（canvas要素）にその結果が出力されています。コードは自分でも書き換えることができ、元に戻す際には一番下にある【**リセット**】ボタンをクリックすると最初の画面に戻ります。
+このリポジトリはドロップダウンメニュー（`select`要素）を使用して、白色の二重線の下にある白色のエリア（`iframe`要素内）に各ディレクトリ内にある`index.html`ファイルの内容が表示されるようにしています。
 
-iframe要素の内容は上から順に以下の通りとなります。
+［**選択してください**］を押下し、どれかを選択して表示させてみてください。
+
+表示された内容は上から順に以下の通りです。
+
+- プレビュー画面（`canvas`要素）
+    - textarea要素内に記述されたコードの結果が表示されてます。
+- JavaScriptコード（`textarea`要素）
+    - JavaScriptコードが記述されています。
+- リセットボタン（`input`要素）
+    - textarea要素内に記述されているコードの変更を初期値（読み込まれた最初の状態）に戻すためのボタンです。
 <br>
 
-### 共通設定
+## 共通設定
 
-#### CSS
+それぞれのファイルに共通して記述されているコードがあります。
+
+### CSS
 
 アットルールを使用して画面の幅が`699px`以下の場合、textarea要素内に記述されているコードのフォントサイズを`120%`から`100%`へと変更しています。 
 
@@ -21,7 +32,7 @@ iframe要素の内容は上から順に以下の通りとなります。
 
 このCSSの共通設定は、各ディレクトリ内にある`style.css`ファイルに記述しています。
 
-#### JavaScript
+### JavaScript
 
 ブラウザーがcanvas要素に対応していたら、canvas要素内に記述された内容を描画するようにします。
 
@@ -47,7 +58,7 @@ if (canvas.getContext) {
 ```
 <br>
 
-### 基本
+## 基本
 
 [rectangles.html](basic/resources/rectangles.html "basic/resources/rectangles.html")、[paths.html](basic/resources/paths.html "basic/resources/paths.html")、[texts.html](basic/resources/texts.html "basic/resources/texts.html")の組み合わせ
 
@@ -173,7 +184,7 @@ if (canvas.getContext) {
 ```
 <br>
 
-### 座標変換
+## 座標変換
 
 [scale.html](transform/resources/scale.html "transform/resources/scale.html")、[translate.html](transform/resources/translate.html "transform/resources/translate.html")、[set-transform.html](transform/resources/set-transform.html "transform/resources/set-transform.html")、[rotate.html](transform/resources/rotate.html "transform/resources/rotate.html")の組み合わせ
 
@@ -248,7 +259,7 @@ if (canvas.getContext) {
 ```
 <br>
 
-### アニメーションとグラデーション
+## アニメーションとグラデーション
 
 [animation.html](advanced/resources/animation.html "advanced/resources/animation.html")、[gradation.html](advanced/resources/gradation.html "advanced/resources/gradation.html")の組み合わせ
 
@@ -330,7 +341,7 @@ if (canvas.getContext) {
 ```
 <br>
 
-※ 日本時間 2024/12/06 に変更しました。
+※ 日本時間 2024/12/18 に変更しました。
 <br><br>
 
 [完成ページへ](https://yscyber.github.io/canvas/ "https://yscyber.github.io/canvas/")
