@@ -5,15 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Canvas</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="script.js" type="text/javascript" defer></script>
 </head>
 <body>
     <header>
         <h1>Canvas Rendering Context2D</h1>
+        <select>
+            <option value="">選択してください</option>
+            <option value="basic/index.html">基本</option>
+            <option value="transform/index.html">座標変換</option>
+            <option value="advanced/index.html">アニメーション</option>
+        </select>
     </header>
-    <div class="wrapper">
-        <iframe src="basic/index.html" title="基本のデモファイル" width="980" height="800" frameborder="0"></iframe>
-        <iframe src="transform/index.html" title="座標変換のデモファイル" width="980" height="800" frameborder="0"></iframe>
-        <iframe src="advanced/index.html" title="アニメーションとグラデーションのデモファイル" width="980" height="800" frameborder="0"></iframe>
-    </div>
+    <iframe width="980" height="500" frameborder="0"></iframe>
 </body>
 </html>
