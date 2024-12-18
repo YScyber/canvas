@@ -4,7 +4,7 @@ html {
 }
 
 body {
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 0;
     width: 90%;
     max-width: 980px;
@@ -12,20 +12,25 @@ body {
 }
 
 header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 20px;
     padding: 1em;
     border-bottom: 10px double #f8f8f8;
 }
 
 h1 {
-    text-align: center;
     color: #f8f8f8;
 }
 
-div.wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+select {
+    position: absolute;
+    right: 0;
+    padding: 10px 0 10px 10px;
+    width: 200px;
+    font-size: 100%;
 }
 
 iframe {
@@ -34,6 +39,20 @@ iframe {
 }
 
 @media screen and (max-width: 799px) {
+    body {
+        margin: 0 auto 10px;
+    }
+    
+    header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    select {
+        position: relative;
+        margin-bottom: 10px;
+    }
+
     iframe {
         height: 550px;
     }
