@@ -184,6 +184,9 @@ if (canvas.getContext) {
 ```
 <br>
 
+[ソースコードの参照ページへ](basic/index.html "basic/index.html")
+<br>
+
 ## 座標変換
 
 [scale.html](transform/resources/scale.html "transform/resources/scale.html")、[translate.html](transform/resources/translate.html "transform/resources/translate.html")、[set-transform.html](transform/resources/set-transform.html "transform/resources/set-transform.html")、[rotate.html](transform/resources/rotate.html "transform/resources/rotate.html")の組み合わせ
@@ -257,6 +260,9 @@ if (canvas.getContext) {
     ctx.restore();
 }
 ```
+<br>
+
+[ソースコードの参照ページへ](transform/index.html "transform/index.html")
 <br>
 
 ## アニメーションとグラデーション
@@ -341,7 +347,10 @@ if (canvas.getContext) {
 ```
 <br>
 
-※ 日本時間 2024/12/22 に変更を加えました。
+[ソースコードの参照ページへ](advanced/index.html "advanced/index.html")
+<br>
+
+※ 日本時間 2024/12/25 に変更を加えました。
 <br><br>
 
 [完成ページへ](https://yscyber.github.io/canvas/ "https://yscyber.github.io/canvas/")
