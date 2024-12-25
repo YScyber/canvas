@@ -182,7 +182,6 @@ if (canvas.getContext) {
     ctx.fill();
 }
 ```
-<br>
 
 [ソースコードの参照ページへ](basic/index.html "basic/index.html")
 <br>
@@ -260,7 +259,6 @@ if (canvas.getContext) {
     ctx.restore();
 }
 ```
-<br>
 
 [ソースコードの参照ページへ](transform/index.html "transform/index.html")
 <br>
@@ -345,7 +343,6 @@ if (canvas.getContext) {
     loop();
 }
 ```
-<br>
 
 [ソースコードの参照ページへ](advanced/index.html "advanced/index.html")
 <br>
