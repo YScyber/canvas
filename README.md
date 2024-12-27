@@ -12,7 +12,7 @@
     - JavaScriptコードが記述されています。
 - リセットボタン（`input`要素）
     - textarea要素内に記述されているコードの変更を初期値（読み込まれた最初の状態）に戻すためのボタンです。
-<br>
+<br><br>
 
 ## 共通設定
 
@@ -182,9 +182,10 @@ if (canvas.getContext) {
     ctx.fill();
 }
 ```
+<br>
 
 [ソースコードの参照ページへ](basic/index.html "basic/index.html")
-<br>
+<br><br>
 
 ## 座標変換
 
@@ -259,9 +260,10 @@ if (canvas.getContext) {
     ctx.restore();
 }
 ```
+<br>
 
 [ソースコードの参照ページへ](transform/index.html "transform/index.html")
-<br>
+<br><br>
 
 ## アニメーションとグラデーション
 
@@ -343,11 +345,12 @@ if (canvas.getContext) {
     loop();
 }
 ```
-
-[ソースコードの参照ページへ](advanced/index.html "advanced/index.html")
 <br>
 
-※ 日本時間 2024/12/25 に変更を加えました。
+[ソースコードの参照ページへ](advanced/index.html "advanced/index.html")
+<br><br>
+
+※ 日本時間 2024/12/27 に変更を加えました。
 <br><br>
 
 [完成ページへ](https://yscyber.github.io/canvas/ "https://yscyber.github.io/canvas/")
